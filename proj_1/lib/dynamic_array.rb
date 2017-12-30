@@ -42,6 +42,11 @@ class DynamicArray
 
   # O(n): has to shift over all the elements.
   def shift
+    if @arr.length > 0
+      @arr.shift()
+    else 
+      raise "index out of bounds"
+    end 
   end
 
   # O(n): has to shift over all the elements.
