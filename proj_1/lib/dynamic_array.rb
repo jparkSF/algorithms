@@ -51,6 +51,7 @@ class DynamicArray
 
   # O(n): has to shift over all the elements.
   def unshift(val)
+    @arr.unshift(val)
   end
 
   protected
