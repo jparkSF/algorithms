@@ -31,6 +31,13 @@ class QueueWithMax
   end
 
   def dequeue
+    temp = @store[0]
+    @store.shift()
+
+    if temp == max
+      @max.shift()
+    end
+
   end
 
   def max
