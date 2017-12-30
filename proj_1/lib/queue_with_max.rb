@@ -47,5 +47,4 @@ class QueueWithMax
   def length
     @store.length
   end
-
 end
