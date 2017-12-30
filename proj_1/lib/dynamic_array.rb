@@ -4,10 +4,13 @@ class DynamicArray
   attr_reader :length
 
   def initialize
+    @arr = Array.new(0)
+    @capacity = 8
   end
 
   # O(1)
   def [](index)
+    @arr.length
   end
 
   # O(1)
