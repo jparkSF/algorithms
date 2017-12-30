@@ -17,6 +17,17 @@ class QueueWithMax
   end
 
   def enqueue(val)
+    @store.push(val)
+
+    if @max.length == 0 || @max[@max.length-1] > val
+      @max.push(val)
+    else
+      until @max.length == 0 || @max[@max.length-1] > val
+        @max.pop()
+      end
+
+      @max.push(val)
+    end
   end
 
   def dequeue
