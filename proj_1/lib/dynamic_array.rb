@@ -24,6 +24,11 @@ class DynamicArray
 
   # O(1)
   def pop
+    if @arr.length > 0
+      @arr.pop()
+    else 
+      raise "index out of bounds"
+    end 
   end
 
   # O(1) ammortized; O(n) worst case. Variable because of the possible
