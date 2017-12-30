@@ -7,6 +7,11 @@ class DynamicArray
     @arr = Array.new(0)
     @capacity = 8
   end
+  
+  def length
+    return @arr.length
+  end
+
 
   # O(1)
   def [](index)
