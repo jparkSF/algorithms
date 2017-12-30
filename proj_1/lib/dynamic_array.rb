@@ -15,6 +15,11 @@ class DynamicArray
 
   # O(1)
   def []=(index, value)
+    if @arr.length > index 
+      @arr[index]
+    else 
+      raise 'index out of bounds'
+    end 
   end
 
   # O(1)
