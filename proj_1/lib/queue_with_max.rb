@@ -41,6 +41,7 @@ class QueueWithMax
   end
 
   def max
+    @max[0]
   end
 
   def length
