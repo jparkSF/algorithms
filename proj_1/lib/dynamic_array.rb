@@ -9,22 +9,22 @@ class DynamicArray
   end
   
   def length
-    return @arr.length
+    @arr.length
   end
 
 
   # O(1)
   def [](index)
-    @arr.length
-  end
-
-  # O(1)
-  def []=(index, value)
     if @arr.length > index 
       @arr[index]
     else 
       raise 'index out of bounds'
     end 
+  end
+
+  # O(1)
+  def []=(index, value)
+    @arr[index] = value
   end
 
   # O(1)
