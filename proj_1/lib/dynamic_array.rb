@@ -63,5 +63,8 @@ class DynamicArray
 
   # O(n): has to copy over all the elements to the new store.
   def resize!
+    @capacity = @capacity * 2
+    @store = Array.new(@capacity)
+    @store.concat(@arr)
   end
 end
