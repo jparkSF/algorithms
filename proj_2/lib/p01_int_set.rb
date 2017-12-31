@@ -92,6 +92,12 @@ class ResizingIntSet
   end
 
   def remove(num)
+    self[num].each do |el|
+      if el == num
+        self[num].delete(el)
+        @count -= 1
+      end
+    end
   end
 
   def include?(num)
