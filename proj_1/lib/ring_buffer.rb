@@ -4,6 +4,10 @@ class RingBuffer
   attr_reader :length
 
   def initialize
+    self.store = Array.new(8)
+    self.capacity = 8
+    self.length = 0
+    self.start_idx = 0
   end
 
   # O(1)
