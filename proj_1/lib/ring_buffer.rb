@@ -25,7 +25,6 @@ class RingBuffer
       self.store[(index + start_idx) % capacity] = val
     else
       raise "index out of bounds"
-
     end
   end
 
