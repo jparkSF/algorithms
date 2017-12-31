@@ -30,6 +30,15 @@ class RingBuffer
 
   # O(1)
   def pop
+    if length == 0
+      raise "index out of bounds"
+    else
+    popped = self[length - 1]
+    self[length - 1] = nil
+    self.length -= 1
+
+    popped
+    end
   end
 
   # O(1) ammortized
