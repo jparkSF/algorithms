@@ -50,6 +50,10 @@ class IntSet
   end
 
   def include?(num)
+    self[num].each do |el|
+      return true if el == num
+    end
+    false
   end
 
   private
