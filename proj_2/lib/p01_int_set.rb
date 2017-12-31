@@ -40,6 +40,7 @@ class IntSet
   end
 
   def insert(num)
+    self[num].push(num) if !include?(num)
   end
 
   def remove(num)
