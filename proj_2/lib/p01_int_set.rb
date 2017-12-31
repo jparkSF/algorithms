@@ -44,6 +44,9 @@ class IntSet
   end
 
   def remove(num)
+    self[num].each do |el|
+      self[num].delete(el) if el == num
+    end
   end
 
   def include?(num)
