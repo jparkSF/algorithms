@@ -11,6 +11,7 @@ class StaticArray
 
   # O(1)
   def []=(index, value)
+    store[index] = value
   end
 
   protected
