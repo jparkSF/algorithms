@@ -43,6 +43,12 @@ class RingBuffer
 
   # O(1) ammortized
   def push(val)
+    if self.length == self.capacity
+      resize!
+    end
+    self.length += 1
+    self[length - 1] = val
+
   end
 
   # O(1)
