@@ -119,5 +119,16 @@ class ResizingIntSet
   end
 
   def resize!
+    temp = @store.dup
+    @count = 0
+    @store = Array.new(2*num_buckets) {Array.new}
+
+    temp.each do |bucket|
+
+      bucket.each do |el|
+        insert(el)
+      end
+    end
+
   end
 end
