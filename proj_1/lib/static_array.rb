@@ -6,6 +6,7 @@ class StaticArray
 
   # O(1)
   def [](index)
+    store[index]
   end
 
   # O(1)
