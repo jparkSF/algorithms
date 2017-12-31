@@ -82,5 +82,15 @@ class RingBuffer
   end
 
   def resize!
+    capacity = self.capacity * 2
+    temp = Array.new(capacity)
+
+    length.times do |i|
+      temp[i] = self[i]
+    end
+
+    self.store = temp
+    self.capacity = capacity
+    self.start_idx = 0
   end
 end
