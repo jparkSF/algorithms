@@ -17,6 +17,11 @@ class MaxIntSet
   end
 
   def include?(num)
+    @store.each do |el|
+      return true if el == num
+    end
+
+    false
   end
 
   private
