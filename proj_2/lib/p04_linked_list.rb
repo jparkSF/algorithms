@@ -32,6 +32,7 @@ class LinkedList
   end
 
   def first
+    @head
   end
 
   def last
