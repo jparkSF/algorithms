@@ -32,6 +32,13 @@ class HashSet
   end
 
   def remove(key)
+    bucket = (key.class.hash % num_buckets)
+    self[bucket].each do |el|
+      if el == key
+        @count -= 1
+        self[bucket].delete(el)
+      end
+    end
   end
 
   private
