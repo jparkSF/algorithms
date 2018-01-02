@@ -63,6 +63,10 @@ class LinkedList
   end
 
   def include?(key)
+    node = get(key)
+    return false if node == nil
+    true
+
   end
 
   def append(key, val)
