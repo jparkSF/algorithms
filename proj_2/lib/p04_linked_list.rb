@@ -110,6 +110,31 @@ class LinkedList
   end
 
   def remove(key)
+    count = 0
+    node = @head
+    while count < @count
+      if node && node.key == key
+
+        if node == @head
+          @head = node.next
+
+
+        else
+          prev_node = node.prev
+          next_node = node.next
+
+          prev_node.next = next_node
+          next_node.prev = prev_node
+        end
+
+
+        node = nil
+        return true
+      end
+
+      node = node.next
+      count += 1
+    end
   end
 
   def each
