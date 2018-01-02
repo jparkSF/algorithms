@@ -53,5 +53,18 @@ class HashSet
   end
 
   def resize!
+    temp = @store.dup
+    @store = Array.new(2*num_buckets) {Array.new}
+    @count = 0
+
+    temp.each do |bucket|
+
+      bucket.each do |el|
+        insert(el)
+      end
+
+    end
+
+  
   end
 end
