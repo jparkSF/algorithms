@@ -6,6 +6,7 @@ class Node
     @val = val
     @next = nil
     @prev = nil
+    
   end
 
   def to_s
