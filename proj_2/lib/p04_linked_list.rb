@@ -70,6 +70,30 @@ class LinkedList
   end
 
   def append(key, val)
+    #create a new node
+    new_node = Node.new(key,val)
+    @count += 1
+
+    #if theres 1 node, then its first and last
+    if @count == 1
+      @head = new_node
+      @tail = new_node
+    else
+      if @head == @tail
+        @head.next = new_node
+        new_node.prev = @head
+        @tail = new_node
+      else
+        new_node.prev = @tail
+        new_node.next = nil
+
+        @tail.next = new_node
+
+        @tail = new_node
+      end
+
+
+    end
   end
 
   def update(key, val)
