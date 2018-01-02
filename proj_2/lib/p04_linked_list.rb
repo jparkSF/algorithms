@@ -138,6 +138,13 @@ class LinkedList
   end
 
   def each
+    current_node = @head
+    until current_node == nil
+      yield current_node
+      current_node = current_node.next
+    end
+
+
   end
 
   # uncomment when you have `each` working and `Enumerable` included
