@@ -9,6 +9,18 @@ class HashSet
   end
 
   def insert(key)
+    bucket_to_be_inserted = (key.class.hash % num_buckets)
+    if !include?(key)
+      self[bucket_to_be_inserted].push(key)
+      @count += 1
+
+      if @count == num_buckets
+        resize!
+      end
+      return true
+    end
+
+    false
   end
 
   def include?(key)
