@@ -24,6 +24,11 @@ class HashSet
   end
 
   def include?(key)
+    bucket = (key.class.hash % num_buckets)
+    self[bucket].each do |el|
+      return true if key == el
+    end
+    false
   end
 
   def remove(key)
