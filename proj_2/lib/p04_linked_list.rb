@@ -36,6 +36,7 @@ class LinkedList
   end
 
   def last
+    @tail
   end
 
   def empty?
