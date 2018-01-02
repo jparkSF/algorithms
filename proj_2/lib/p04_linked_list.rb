@@ -97,6 +97,16 @@ class LinkedList
   end
 
   def update(key, val)
+    count = 0
+    node = @head
+    while count < @count
+      if node.key == key
+        node.val = val
+        return
+      end
+
+    node = node.next
+    end
   end
 
   def remove(key)
