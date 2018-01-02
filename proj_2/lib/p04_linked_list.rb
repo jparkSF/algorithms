@@ -40,6 +40,8 @@ class LinkedList
   end
 
   def empty?
+    return true if @count == 0
+    false
   end
 
   def get(key)
