@@ -45,6 +45,21 @@ class LinkedList
   end
 
   def get(key)
+    node = @head
+
+    count = 0
+    while count < @count
+    return if node == nil
+
+
+      if node && node.key == key
+        return node.val
+      end
+      node = node.next
+      count += 1
+    end
+
+    return nil
   end
 
   def include?(key)
