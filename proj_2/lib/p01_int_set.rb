@@ -10,6 +10,7 @@ class MaxIntSet
     else
       raise "Out of bounds"
     end
+
   end
 
   def remove(num)
@@ -89,6 +90,8 @@ class ResizingIntSet
 
     false
 
+
+
   end
 
   def remove(num)
@@ -100,11 +103,13 @@ class ResizingIntSet
     end
   end
 
+
   def include?(num)
     self[num].each do |el|
       return true if el == num
     end
     false
+
   end
 
   private
@@ -129,6 +134,11 @@ class ResizingIntSet
         insert(el)
       end
     end
+
+
+
+
+
 
   end
 end
