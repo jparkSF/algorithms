@@ -14,6 +14,15 @@ class HashMap
   end
 
   def set(key, val)
+    if include?(key)
+      bucket(key).update(key,val)
+    else
+      if @count >= num_buckets
+        resize!
+      end
+      bucket(key).append(key,val)
+      @count += 1
+    end
   end
 
   def get(key)
