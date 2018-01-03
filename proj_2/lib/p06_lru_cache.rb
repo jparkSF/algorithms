@@ -34,6 +34,16 @@ class LRUCache
 
   def calc!(key)
     # suggested helper method; insert an (un-cached) key
+    val = @prc.call(key)
+    new_node = @store.append(key,val)
+
+    @map[key] = new_node
+
+    if count > @max
+      eject!
+    end
+
+    val
   end
 
   def update_node!(node)
