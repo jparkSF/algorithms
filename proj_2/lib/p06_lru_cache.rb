@@ -47,9 +47,18 @@ class LRUCache
   end
 
   def update_node!(node)
+    @store.remove(node.key)
+
+    @map[node.key] = @store.append(node.key,node.val)
     # suggested helper method; move a node to the end of the list
   end
 
   def eject!
+    rm_node = @store.first
+    @store.remove(rm_node.key)
+    @map.delete(rm_node.key)
+
+    nil
+
   end
 end
