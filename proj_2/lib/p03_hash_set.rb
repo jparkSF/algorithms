@@ -65,6 +65,5 @@ class HashSet
 
     end
 
-  
   end
 end

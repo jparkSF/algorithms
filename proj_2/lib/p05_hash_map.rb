@@ -1,6 +1,10 @@
 require_relative 'p02_hashing'
 require_relative 'p04_linked_list'
+include Enumerable
 
+def each(&block)
+
+end
 class HashMap
   attr_reader :count
 
@@ -14,6 +18,8 @@ class HashMap
   end
 
   def set(key, val)
+
+
     if include?(key)
       bucket(key).update(key,val)
     else
@@ -43,6 +49,7 @@ class HashMap
     @store.each do |bucket|
      bucket.each { |link| yield [link.key, link.val] }
    end
+
   end
 
   # uncomment when you have Enumerable included
@@ -71,11 +78,11 @@ class HashMap
     temp.each do |bucket|
       bucket.each { |link| set(link.key, link.val) }
     end
+
   end
 
   def bucket(key)
     @store[key.hash % num_buckets]
     # optional but useful; return the bucket corresponding to `key`
   end
-    
 end

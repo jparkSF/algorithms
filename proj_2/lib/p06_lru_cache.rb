@@ -15,6 +15,7 @@ class LRUCache
   end
 
   def get(key)
+
     if @map[key]
       #if key found in hash map
       node = @map[key]
@@ -23,6 +24,7 @@ class LRUCache
     else
       calc!(key)
     end
+
 
   end
 
@@ -44,6 +46,7 @@ class LRUCache
     end
 
     val
+
   end
 
   def update_node!(node)
