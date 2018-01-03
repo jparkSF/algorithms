@@ -33,6 +33,10 @@ class HashMap
   end
 
   def delete(key)
+    removal = bucket(key).remove(key)
+
+    @count -= 1 if removal
+
   end
 
   def each
