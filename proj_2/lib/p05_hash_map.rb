@@ -40,6 +40,9 @@ class HashMap
   end
 
   def each
+    @store.each do |bucket|
+     bucket.each { |link| yield [link.key, link.val] }
+   end
   end
 
   # uncomment when you have Enumerable included
