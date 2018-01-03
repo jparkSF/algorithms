@@ -26,6 +26,10 @@ class HashMap
   end
 
   def get(key)
+    bucket(key).each do |node|
+      return node.val if node.key == key
+    end
+    nil
   end
 
   def delete(key)
