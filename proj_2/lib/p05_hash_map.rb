@@ -63,6 +63,14 @@ class HashMap
   end
 
   def resize!
+    temp = @store.dup
+
+    @store = Array.new(2*num_buckets) {LinkedList.new}
+    @count = 0
+
+    temp.each do |bucket|
+      bucket.each { |link| set(link.key, link.val) }
+    end
   end
 
   def bucket(key)
