@@ -17,10 +17,12 @@ class BinaryMinHeap
   end
 
   def push(val)
+    @heal.push(val)
   end
 
   public
   def self.child_indices(len, parent_index)
+
   end
 
   def self.parent_index(child_index)
