@@ -13,6 +13,7 @@ class BinaryMinHeap
   end
 
   def peek
+    @heap[0]
   end
 
   def push(val)
