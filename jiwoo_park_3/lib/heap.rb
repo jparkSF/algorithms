@@ -13,16 +13,11 @@ class BinaryMinHeap
   end
 
   def extract
-
     val = @store[0]
-
     @store[0], @store[@store.length-1] =  @store[@store.length-1], @store[0]
-
     @store.delete(@store[@store.length-1])
     BinaryMinHeap.heapify_down(@store, 0)
     val
-
-
   end
 
   def peek
@@ -30,15 +25,11 @@ class BinaryMinHeap
 
   def push(val)
     @store.push(val)
-
     BinaryMinHeap.heapify_up(@store, @store.length-1)
   end
 
   public
   def self.child_indices(len, parent_index)
-
-
-
     left_child = (parent_index * 2) + 1
     right_child = (parent_index * 2) + 2
 
@@ -49,8 +40,6 @@ class BinaryMinHeap
     else
       []
     end
-
-
   end
 
   def self.parent_index(child_index)
@@ -59,9 +48,7 @@ class BinaryMinHeap
   end
 
   def self.heapify_down(array, parent_idx, len = array.length, &prc)
-
     prc = prc ? prc : Proc.new {|el1, el2| el1 <=> el2}
-
     swapped = true
 
     while swapped
@@ -82,15 +69,10 @@ class BinaryMinHeap
 
            break
          end
-
       end
-
     end
 
     array
-
-
-
   end
 
   def self.heapify_up(array, child_idx, len = array.length, &prc)
