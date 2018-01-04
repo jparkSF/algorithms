@@ -81,7 +81,6 @@ class BinaryMinHeap
 
     while swapped && child_idx != 0
       swapped = false
-
       parent_idx = BinaryMinHeap.parent_index(child_idx)
 
       if prc.call(array[parent_idx], array[child_idx]) == 1
@@ -93,11 +92,7 @@ class BinaryMinHeap
 
         swapped = true
       end
-
-
     end
-
      array
-
   end
 end
