@@ -2,9 +2,11 @@ class BinaryMinHeap
   attr_reader :store, :prc
 
   def initialize(&prc)
+    @heap = []
   end
 
   def count
+    @heap.length
   end
 
   def extract
