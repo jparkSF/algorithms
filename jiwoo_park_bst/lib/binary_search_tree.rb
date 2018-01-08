@@ -12,9 +12,11 @@ class BinarySearchTree
 
   def find(value, tree_node = @root)
 
+
   end
 
   def delete(value)
+
   end
 
   # helper method for #delete:
