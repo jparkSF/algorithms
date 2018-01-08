@@ -25,6 +25,7 @@ class BinarySearchTree
   end
 
   def depth(tree_node = @root)
+
   end
 
   def is_balanced?(tree_node = @root)
