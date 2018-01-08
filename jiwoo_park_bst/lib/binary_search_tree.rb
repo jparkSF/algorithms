@@ -38,6 +38,7 @@ class BinarySearchTree
 
 
   private
+
   # optional helper methods go here:
 
 end
