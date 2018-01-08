@@ -3,10 +3,11 @@
 
 class BinarySearchTree
   def initialize
-    
+
   end
 
   def insert(value)
+
   end
 
   def find(value, tree_node = @root)
