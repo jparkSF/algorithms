@@ -12,7 +12,6 @@ class BinarySearchTree
   end
 
   def delete(value)
-
   end
 
   # helper method for #delete:
