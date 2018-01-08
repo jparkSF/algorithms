@@ -6,7 +6,6 @@ class BinarySearchTree
   end
 
   def insert(value)
-
   end
 
   def find(value, tree_node = @root)
