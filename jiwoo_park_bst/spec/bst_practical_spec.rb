@@ -22,13 +22,14 @@ describe 'BST Practical Question' do
 
   it "returns the kth largest node" do
     k = 7
+
     k_node = prefilled_bst.root.left.left.right
     # the above node is pointing to the node with value 2
 
     expect(kth_largest(prefilled_bst.root, k)).to be(k_node)
 
 
-    n = 2 
+    n = 2
     n_node = balanced_bst.root.right
     # the above node is pointing to the node with value 16
 
