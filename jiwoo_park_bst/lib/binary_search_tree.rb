@@ -9,8 +9,6 @@ class BinarySearchTree
   end
 
   def find(value, tree_node = @root)
-
-
   end
 
   def delete(value)
