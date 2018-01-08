@@ -3,7 +3,6 @@
 
 class BinarySearchTree
   def initialize
-
   end
 
   def insert(value)
