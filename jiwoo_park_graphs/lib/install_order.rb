@@ -3,30 +3,35 @@
 # the packages should be installed. Only packages that have dependencies
 # will be listed, but all packages from 1..max_id exist.
 
-# N.B. this is how `npm` works.
+# N.B. this is largely how `npm` works.
 
 # Import any files you need to
 
-require 'graph'
-require 'topological_sort'
-
+require_relative 'graph'
+require_relative 'topological_sort'
 
 def install_order(arr)
-  ids = arr.flatten
-  max = ids.max
-  vertices = []
+  max = 0
+  vertices = {}
+  arr.each do |tuple|
+    # create the graph
+    vertices[tuple[0]] = Vertex.new(tuple[0]) unless vertices[tuple[0]]
+    vertices[tuple[1]] = Vertex.new(tuple[1]) unless vertices[tuple[1]]
+    Edge.new(vertices[tuple[1]], vertices[tuple[0]])
 
-  (1..max).each do |id|
-    vertices << Vertex.new(id)
+    #reset max if needed
+    max = tuple.max if tuple.max > max
   end
 
-  edges = []
-
-  arr.each do |id, dependency|
-    edges << Edge.new(vertices[dependency - 1], vertices[id - 1])
+  # find the missing packages
+  independent = []
+  (1..max).each do |i|
+    independent << i unless vertices[i]
   end
 
-  sorted_array = topological_sort(vertices)
-
-  sorted_array.map(&:value)
+  # sort the vertices of the graph and add the missing packages
+  independent + topological_sort(vertices.values).map { |v| v.value }
 end
+
+# arr = [[3, 1], [2, 1], [6, 5], [3, 6], [3, 2], [4, 3], [9, 1]]
+# p install_order(arr)
